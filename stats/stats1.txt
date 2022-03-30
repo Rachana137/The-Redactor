@@ -1,0 +1,9 @@
+file0
+The number of Names redacted from the file: 9
+The number of Phone Number redacted from the file: 0
+The number of Dates redacted from the file: 1
+The number of Gender redacted from the file: 17
+The number of Address redacted from the file: 0
+The number of Concept redacted from the file: 0
+Total number of redactions in the file is :27
+

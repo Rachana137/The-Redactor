@@ -1,11 +1,11 @@
 import pytest
-import project1 as p1
+from project1 import project1 as p1
 
 def test_names():
-    data = "John father's name is Edward, and the mother's name is Marie ."
+    data = "John father's name is Edward."
     red, li = p1.names_(data)
-    assert len(li)==3
-    assert red == "████ father's name is ██████, and the mother's name is █████ ."
+    assert len(li)==2
+    assert red == "████ father's name is ██████."
 
 def test_dates():
     data = "Marie date of birth is 29/11/1994. Today is 26 Mar 2021."

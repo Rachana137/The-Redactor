@@ -86,7 +86,7 @@ def genders(data):
 def address(data):
     doc = nlp(data)
     ad_matcher = Matcher(nlp.vocab)
-    pattern = [{'SHAPE': 'dddd'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}, {'SHAPE': '\n'}, {'POS': 'PROPN'},
+    pattern = [{'SHAPE': 'dddd'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}, {'SHAPE': '\n','OP':'?'}, {'POS': 'PROPN'},
                {'POS': 'PROPN'}, {'SHAPE': 'dddd'}]
     ad_matcher.add('Address', [pattern])
     matches = ad_matcher(doc)
@@ -179,7 +179,7 @@ def stats(data, c, file,n):
 
 # Output stored in a text file.
 def output(data, file, path):
-    filepath = ('./%s %s_redacted.txt' % (path, file))
+    filepath = ('./%s redacted_%s' % (path, file))
     with open(filepath, 'w+', encoding='utf-8') as f:
         f.write(data)
         f.close()
