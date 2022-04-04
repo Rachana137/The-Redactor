@@ -78,7 +78,7 @@ The data redacted from the functions is done by replacing detected data with Uni
  pattern = [{'SHAPE': 'dddd'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}, {'SHAPE': '\n','OP':'?'}, {'POS': 'PROPN'},
                {'POS': 'PROPN'}, {'SHAPE': 'dddd'}]
  ```
-   ### Bugs
+   #### Bugs
     It won't redact if given only street or location. ex: '1400 Smith Street' or 'Houston'.
     
 6. **concept(data, concept)**
