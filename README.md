@@ -59,8 +59,8 @@ The data redacted from the functions is done by replacing detected data with Uni
         data = data.replace(dat, u"\u2588" * len(dat))
  ```
  Here commonregex package is used to find dates. It can also be used to find phone numbers, emails, links etc.
- ### Bugs:
- If the date is in the format of 26 March 2021 it will redact like this: ██ ███ch ████.
+   ### Bugs:
+   If the date is in the format of 26 March 2021 it will redact like this: ██ ███ch ████.
  
 4. **genders(data)**
 
@@ -78,8 +78,9 @@ The data redacted from the functions is done by replacing detected data with Uni
  pattern = [{'SHAPE': 'dddd'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}, {'SHAPE': '\n','OP':'?'}, {'POS': 'PROPN'},
                {'POS': 'PROPN'}, {'SHAPE': 'dddd'}]
  ```
- ### Bugs
- It won't redact if given only street or location. ex: '1400 Smith Street' or 'Houston'.
+   ### Bugs
+    It won't redact if given only street or location. ex: '1400 Smith Street' or 'Houston'.
+    
 6. **concept(data, concept)**
 
  This function takes in the data and the concept. Here, The concept taken is 'insurance'. Whenever the concept word or similar word is detected the sentence related to the word should be redacted.
