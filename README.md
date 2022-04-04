@@ -37,7 +37,7 @@ The data redacted from the functions is done by replacing detected data with Uni
    pattern = [{'POS': 'PROPN'},{'ORTH':',','OP':'?'} ,{'POS': 'PROPN', 'OP': '?'}]
   ```
   Assumed the Names are in this format {Firstname, LastName}, {FirstName LastName},{FirstName}.
-  ### Bugs
+  #### Bugs
   If the name is in the format {LastName, FirstName} it will only redact FirstName. And if the name is nickname (ex: Ted) it won't redact.
 
 2. **extract_phone_number(data)**
@@ -59,7 +59,7 @@ The data redacted from the functions is done by replacing detected data with Uni
         data = data.replace(dat, u"\u2588" * len(dat))
  ```
  Here commonregex package is used to find dates. It can also be used to find phone numbers, emails, links etc.
-   ### Bugs:
+   #### Bugs:
    If the date is in the format of 26 March 2021 it will redact like this: ██ ███ch ████.
  
 4. **genders(data)**
