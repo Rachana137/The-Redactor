@@ -136,7 +136,7 @@ Refer this folder [stats](https://github.com/Rachana137/cs5293sp22-project1/tree
 
  This function takes the redacted data, file name and the location where the file need be stored.
  ```bash
- filepath = ('./%s redacted_%s' % (path, file))
+ filepath = ('./files/ redacted_%s' % ( file))
     with open(filepath, 'w+', encoding='utf-8') as f:
         f.write(data)
         f.close()
