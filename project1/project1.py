@@ -179,7 +179,7 @@ def stats(data, c, file,n):
 
 # Output stored in a text file.
 def output(data, file, path):
-    filepath = ('./%s redacted_%s' % (path, file))
+    filepath = ('./files/ redacted_%s' % ( file))
     with open(filepath, 'w+', encoding='utf-8') as f:
         f.write(data)
         f.close()
