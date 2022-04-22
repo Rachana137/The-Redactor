@@ -129,8 +129,10 @@ def address(data):
     pattern1 = [{'SHAPE': 'dddd'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}, {'SHAPE': '\n', 'OP': '?'}, {'POS': 'PROPN'},
                 {'POS': 'PROPN'}, {'SHAPE': 'dddd'}]
     pattern2 = [{'SHAPE': 'dddd'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}]
+    pattern3=[{'SHAPE': 'dddd'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}, {'POS': 'PROPN'},{'POS': 'PUNCT','OP':'?'},
+              {'POS': 'PROPN'}]
 
-    for i in [pattern1, pattern2]:
+    for i in [pattern1, pattern2,pattern3]:
         ad_matcher.add('Address', [i])
         matches = ad_matcher(doc)
 
