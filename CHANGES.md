@@ -16,3 +16,11 @@ For this I added a code so that it can store in the given input folder.
         print(error)
 ```
 Here, os.makedirs() helps us to create the given folder. 
+
+## File names not re-assigned correctly
+
+Before changes, my files stored as "redacted_file3.txt". So I made small changes in my code.
+```bash
+  fpath = ('%s.redacted' % (file))
+```
+This line of code helps in storing the redacted file in "<file>.redacted" form. (ex. file1.txt.redacted).
