@@ -145,4 +145,43 @@ Now, it redacts the international numbers. Example formats of numbers can be red
                 data = data.replace(x, u"\u2588" * len(x))
   ```
   
+## Small amount of Features Found - Names
   
+  Here I changed the code so that the names with comma in between firstname and lastname can also be redacted. Ex: {lastname,firstname}.
+  ```bash
+  def names_(data):
+    
+    matcher = Matcher(nlp.vocab)
+    pattern = [{'POS':'PROPN'},{'ORTH':',','OP':'?'},{'POS':'PROPN','OP':'?'}]
+    matcher.add('name',[pattern])
+    doc=nlp(data)
+    matches = matcher(doc)
+    l2=[]
+    count=[]
+    for match_id, start, end in matches:
+        span = doc[start:end]
+         
+        name=span.text.replace(',',' ')
+        
+        name=nlp(name)
+        
+        for i in name.ents:
+            
+            if i.label_ == 'PERSON':
+                l2.append(i.text)
+                
+    redact_doc= data
+    
+    for word in l2:
+        
+        w=word.replace(" ",',')
+        redact_doc= redact_doc.replace(w,u"\u2588" * len(word))
+        w1=w.replace(",",' ')
+        redact_doc= redact_doc.replace(w1,u"\u2588" * len(word))
+        
+    return redact_doc,set(l2)
+```
+ 
+  ## Concept
+  
+  I believe with the current code atleast few concepts are redacted. I tried few examples. 
