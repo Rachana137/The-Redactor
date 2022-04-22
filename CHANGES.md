@@ -24,3 +24,6 @@ Before changes, my files stored as "redacted_file3.txt". So I made small changes
   fpath = ('%s.redacted' % (file))
 ```
 This line of code helps in storing the redacted file in "<file>.redacted" form. (ex. file1.txt.redacted).
+
+  
+## Missing Stats 
