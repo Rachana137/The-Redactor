@@ -51,22 +51,38 @@ def extract_phone_number(data):
 
 # Names
 def names_(data):
+    
     matcher = Matcher(nlp.vocab)
-    pattern = [{'POS': 'PROPN'},{'ORTH':',','OP':'?'} ,{'POS': 'PROPN', 'OP': '?'}]
-    matcher.add('name', [pattern])
-    doc = nlp(data)
+    pattern = [{'POS':'PROPN'},{'ORTH':',','OP':'?'},{'POS':'PROPN','OP':'?'}]
+    matcher.add('name',[pattern])
+    doc=nlp(data)
     matches = matcher(doc)
-    l2 = []
+    l2=[]
+    count=[]
     for match_id, start, end in matches:
         span = doc[start:end]
-        for i in span.ents:
+         
+        name=span.text.replace(',',' ')
+        
+        name=nlp(name)
+        
+        for i in name.ents:
+            
             if i.label_ == 'PERSON':
                 l2.append(i.text)
-    redact_doc = data
+                
+    redact_doc= data
+    
     for word in l2:
-        redact_doc = redact_doc.replace(word, u"\u2588" * len(word))
-
-    return redact_doc, l2
+        
+        w=word.replace(" ",',')
+        redact_doc= redact_doc.replace(w,u"\u2588" * len(word))
+        w1=w.replace(",",' ')
+        redact_doc= redact_doc.replace(w1,u"\u2588" * len(word))
+        
+        
+    
+    return redact_doc,set(l2)
 
 
 # Dates
