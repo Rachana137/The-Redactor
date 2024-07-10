@@ -1,11 +1,10 @@
-# Cs5293sp22-project1
-
-## The Redactor
+# The Redactor
 
 ### RACHANA VELLAMPALLI
-### rachana@ou.edu
+
  Whenever sensitive information is shared with the public, the data must go through a redaction process. That is, all sensitive names, places, and other sensitive information must be hidden. Documents such as police reports, court transcripts, and hospital records all contain sensitive information. Redacting this information is often expensive and time consuming.In this Project1, trying to redact this sensitive information from the .txt files.
- ## Packages Required
+
+## Packages Required
 
 ### Installing and Importing Packages
 
